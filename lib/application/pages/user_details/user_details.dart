@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ktp_project/application/core/widgets/user_detail_row.dart';
+import 'package:ktp_project/application/pages/edit_user/edit_user.dart';
 
 class UserDetailPage extends StatelessWidget {
   const UserDetailPage({super.key});
@@ -13,7 +14,10 @@ class UserDetailPage extends StatelessWidget {
           actions: [
             IconButton(
               icon: const Icon(Icons.edit),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const EditPage()));
+              },
             )
           ],
         ),
