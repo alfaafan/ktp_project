@@ -1,3 +1,5 @@
+import 'package:ktp_project/data/models/user_data_model.dart';
+
 class User {
   String name;
   String birthDetails;
@@ -32,4 +34,15 @@ class User {
         "profession": profession,
         "education": education,
       };
+
+  UserDataModel toDataModel() {
+    return UserDataModel(
+      name: name,
+      birthDetails: birthDetails,
+      regency: regency,
+      province: province,
+      profession: profession,
+      education: education,
+    );
+  }
 }

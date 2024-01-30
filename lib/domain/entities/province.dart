@@ -1,11 +1,3 @@
-import 'dart:convert';
-
-List<Province> provinceFromJson(String str) =>
-    List<Province>.from(json.decode(str).map((x) => Province.fromJson(x)));
-
-String provinceToJson(List<Province> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
 class Province {
   String id;
   String name;
