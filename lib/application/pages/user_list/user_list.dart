@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ktp_project/application/pages/input_user/input_user.dart';
+import 'package:ktp_project/application/pages/user_details/user_details.dart';
 import 'package:ktp_project/domain/usecases/province_usecase.dart';
 
 class UserListPage extends StatelessWidget {
@@ -46,7 +47,7 @@ class UserListPage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const InputPage()));
+                              builder: (context) => const UserDetailPage()));
                     },
                   );
                 },

@@ -33,8 +33,8 @@ class _InputPageState extends State<InputPage> {
             child: SingleChildScrollView(
               child: Form(
                 key: _formKey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                child: ListView(
+                  shrinkWrap: true,
                   children: [
                     Text('Data Diri',
                         style: Theme.of(context).textTheme.titleLarge),
