@@ -7,9 +7,12 @@ class ProvinceRepository {
   final ProvinceDatasource _provinceDatasource = ProvinceDatasource();
 
   Future<List<Province>> provinceFromJson() async {
-    List provincesList = jsonDecode(await _provinceDatasource.getProvince());
+    var provincesList = jsonDecode(await _provinceDatasource.getProvince());
 
-    return List<Province>.from(provincesList.map((x) => Province.fromJson(x)));
+    List<Province> provinces =
+        List<Province>.from(provincesList.map((x) => Province.fromJson(x)));
+
+    return provinces;
   }
 
   String provinceToJson(List<Province> data) =>

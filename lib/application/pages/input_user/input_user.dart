@@ -45,6 +45,7 @@ class _InputPageState extends State<InputPage> {
                         labelText: 'Nama',
                         hintText: 'Masukkan nama',
                         border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.person),
                       ),
                     ),
                     const SizedBox(height: 12),
@@ -54,6 +55,7 @@ class _InputPageState extends State<InputPage> {
                         labelText: 'Tempat, Tanggal Lahir',
                         hintText: 'Masukkan tempat, tanggal lahir',
                         border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.calendar_today),
                       ),
                     ),
                     const SizedBox(height: 12),
@@ -66,23 +68,11 @@ class _InputPageState extends State<InputPage> {
                     // ),
                     const SizedBox(height: 12),
                     DropdownButtonFormField(
-                        decoration:
-                            const InputDecoration(labelText: 'Kabupaten/Kota'),
-                        value: selectedValue,
-                        items: dropdownItems
-                            .map((String e) => DropdownMenuItem<String>(
-                                value: e, child: Text(e)))
-                            .toList(),
-                        hint: const Text('Pilih Kabupaten/Kota'),
-                        onChanged: (value) {
-                          setState(() {
-                            selectedValue = value!;
-                          });
-                        }),
-                    const SizedBox(height: 12),
-                    DropdownButtonFormField(
-                        decoration:
-                            const InputDecoration(labelText: 'Provinsi'),
+                        decoration: const InputDecoration(
+                            labelText: 'Provinsi',
+                            hintText: 'Masukkan provinsi',
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.location_city)),
                         value: selectedValue,
                         items: dropdownItems
                             .map((String e) => DropdownMenuItem<String>(
@@ -96,23 +86,30 @@ class _InputPageState extends State<InputPage> {
                         }),
                     const SizedBox(height: 12),
                     DropdownButtonFormField(
-                        decoration:
-                            const InputDecoration(labelText: 'Pekerjaan'),
+                        decoration: const InputDecoration(
+                            labelText: 'Kabupaten/Kota',
+                            hintText: 'Masukkan kabupaten/kota',
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.location_city)),
                         value: selectedValue,
                         items: dropdownItems
                             .map((String e) => DropdownMenuItem<String>(
                                 value: e, child: Text(e)))
                             .toList(),
-                        hint: const Text('Pilih Pekerjaan'),
+                        hint: const Text('Pilih Kabupaten/Kota'),
                         onChanged: (value) {
                           setState(() {
                             selectedValue = value!;
                           });
                         }),
+
                     const SizedBox(height: 12),
                     DropdownButtonFormField(
                         decoration: const InputDecoration(
-                            labelText: 'Pendidikan Terakhir'),
+                            labelText: 'Pendidikan Terakhir',
+                            hintText: 'Masukkan pendidikan terakhir',
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.school)),
                         value: selectedValue,
                         items: dropdownItems
                             .map((String e) => DropdownMenuItem<String>(
@@ -124,6 +121,16 @@ class _InputPageState extends State<InputPage> {
                             selectedValue = value!;
                           });
                         }),
+                    const SizedBox(height: 12),
+                    TextFormField(
+                      controller: _professionController,
+                      decoration: const InputDecoration(
+                        labelText: 'Pekerjaan',
+                        hintText: 'Masukkan pekerjaan',
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.work),
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
                       child: ElevatedButton(
