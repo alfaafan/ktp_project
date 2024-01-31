@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ktp_project/application/pages/input_user/input_user.dart';
 import 'package:ktp_project/application/pages/user_details/user_details.dart';
 import 'package:ktp_project/domain/usecases/province_usecase.dart';
@@ -37,17 +38,20 @@ class UserListPage extends StatelessWidget {
                               onPressed: () {},
                             ),
                             IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  context.go('/penduduk/details/1');
+                                },
                                 icon: const Icon(Icons.keyboard_arrow_right))
                           ],
                         ),
                       ),
                     ),
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const UserDetailPage()));
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => const UserDetailPage()));
+                      context.go('/penduduk/detail/1');
                     },
                   );
                 },

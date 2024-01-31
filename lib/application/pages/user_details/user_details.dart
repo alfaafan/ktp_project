@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ktp_project/application/core/widgets/user_detail_row.dart';
 import 'package:ktp_project/application/pages/edit_user/edit_user.dart';
 
@@ -9,6 +10,12 @@ class UserDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              context.go('/penduduk');
+            },
+          ),
           title: const Text('KTP App'),
           centerTitle: true,
           actions: [

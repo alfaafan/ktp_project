@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ktp_project/domain/entities/province.dart';
+import 'package:ktp_project/domain/entities/regency.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class InputPage extends StatefulWidget {
@@ -13,6 +15,9 @@ class _InputPageState extends State<InputPage> {
   final TextEditingController _birthDetailsController = TextEditingController();
   final TextEditingController _professionController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  List<Province> provinces = [];
+  List<Regency> regencies = [];
 
   List<String> dropdownItems = [
     'Option 1',
